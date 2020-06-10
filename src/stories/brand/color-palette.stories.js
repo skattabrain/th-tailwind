@@ -1,9 +1,9 @@
-import { colorMap } from '../../src/utils/colors.js';
+import { colorMap } from '../../../src/utils/colors.js';
 
 const templateDecorator = () => ({
   template: `
-<div class="min-h-screen w-screen">
-    <div class="container pt-6">
+<div class="min-h-screen w-screen p-3">
+    <div class="container">
       <story />
     </div>
 </div>

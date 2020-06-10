@@ -14,7 +14,11 @@ module.exports = function ({ addComponents, theme }) {
       padding: '.375rem .75rem', // you can have magic... you can have anything, that you desire
       fontSize: '1rem',
       lineHeight: '1.5',
-      borderRadius: '.25rem' // need to get from a var
+      borderRadius: theme('borderRadius.none')
+    },
+    '.btn-ghost': {
+      backgroundColor: theme('colors.white'),
+      color: theme('colors.blue.700'),
     },
     '.btn-secondary': {
       backgroundColor: theme('colors.secondary.600'),
@@ -32,6 +36,14 @@ module.exports = function ({ addComponents, theme }) {
         color: theme('colors.white'),
       }
     },
+    '.btn-group': {
+      position: 'relative',
+      display: 'inline-flex',
+      verticalAlign: 'middle',
+      '.btn:not(:first-child)': {
+        marginLeft: '1px'
+      }
+    }
   }
 
   addComponents(buttons)

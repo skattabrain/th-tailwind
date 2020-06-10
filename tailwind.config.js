@@ -71,7 +71,7 @@ const defaultTheme = {
   },
   borderColor: (theme) => ({
     ...theme('colors'),
-    default: theme('colors.gray.300', 'currentColor'),
+    default: theme('colors.grey.300', 'currentColor'),
   }),
   borderRadius: {
     none: '0',
@@ -149,16 +149,14 @@ const defaultTheme = {
     mono: ['Menlo', 'Monaco', 'Consolas', '"Liberation Mono"', '"Courier New"', 'monospace'],
   },
   fontSize: {
-    xs: '0.75rem',
-    sm: '0.875rem',
-    base: '1rem',
-    lg: '1.125rem',
-    xl: '1.25rem',
-    '2xl': '1.5rem',
-    '3xl': '1.875rem',
-    '4xl': '2.25rem',
-    '5xl': '3rem',
-    '6xl': '4rem',
+    sm: '0.8125rem',
+    base: '0.875rem',
+    lg: '1rem',
+    xl: '1.125rem',
+    '2xl': '1.25rem',
+    '3xl': '1.375rem',
+    '4xl': '1.5rem',
+    '5xl': '2.25rem',
   },
   fontWeight: {
     hairline: '100',
@@ -626,15 +624,15 @@ module.exports = {
   plugins: [
     require('@tailwindcss/custom-forms'),
 
-    // Style base elements - h1, h2, input, ul etc...
-    require('./src/styles/plugins/headings'),
-    require('./src/styles/plugins/tables'),
+    // Style base elements - typography, inputs, ul/ol lists etc...
+    require('./src/styles/plugins/base/typography'),
+    require('./src/styles/plugins/base/tables'),
 
     // Create utility classes
     require('./src/styles/plugins/band-colors'),
 
     // Create component classes
-    require('./src/styles/plugins/buttons'),
+    require('./src/styles/plugins/components/buttons'),
     require('./src/styles/plugins/cards'),
   ],
 

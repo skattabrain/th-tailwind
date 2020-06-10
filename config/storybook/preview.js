@@ -10,7 +10,7 @@ addParameters({
     default: 'bg-grey-100',
     values: colorMapFlat(),
   },
-  layout: 'centered',
+  // layout: 'centered',
   viewport: {
     viewports: INITIAL_VIEWPORTS
   },

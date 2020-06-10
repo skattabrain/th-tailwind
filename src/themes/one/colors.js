@@ -118,13 +118,11 @@ const grey = {
 const transparent = 'transparent';
 const black = grey[900];
 const white = grey[50];
-const brand = red[400];
 
 module.exports = {
 	transparent,
 	black,
 	white,
-	brand,
 	red,
 	green,
 	yellow,

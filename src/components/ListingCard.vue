@@ -1,16 +1,16 @@
 <template>
   <div @click="select" class="flex flex-col cursor-pointer bg-white duration-150
     ease-in-out hover:scale-105 rounded shadow-lg transform transition w-full">
-    <div class="h-48 bg-gray-900 rounded-t">
+    <div class="h-48 bg-grey-900 rounded-t">
       <img :src="imageSrc" :alt="title" class="h-full object-cover rounded-t w-full">
       <div class="transform -translate-y-full flex float-right items-center p-1">
-        <span class="inline-block bg-gray-900 bg-opacity-50 text-gray-200 text-xs px-1 rounded-sm">
+        <span class="inline-block bg-grey-900 bg-opacity-50 text-grey-200 text-xs px-1 rounded-sm">
           {{ stockNumber }}
         </span>
       </div>
     </div>
     <div class="p-3 flex flex-col flex-grow">
-      <h3 class="text-gray-800 text-lg leading-5 flex-grow truncate">
+      <h3 class="text-grey-800 text-lg leading-5 flex-grow truncate">
         <a :href="url">
           {{ title }}
         </a>
@@ -19,9 +19,9 @@
         <div class="flex-1 font-bold text-green-500 text-xl my-2">
           <span class="align-text-top text-sm">$</span>{{ price | numberFilter }}
         </div>
-        <div class="font-medium text-gray-700 text-sm">{{ miles | numberFilter }} mi</div>
+        <div class="font-medium text-grey-700 text-sm">{{ miles | numberFilter }} mi</div>
       </div>
-      <div class="text-xs text-gray-500">{{ dealer }} of {{ location }}</div>
+      <div class="text-xs text-grey-500">{{ dealer }} of {{ location }}</div>
     </div>
   </div>
 </template>

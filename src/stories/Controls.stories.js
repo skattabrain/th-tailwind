@@ -27,10 +27,10 @@ export const textInput = () => ({
   template: `
 <div>
 	<label>
-		<div class="text-sm text-gray-700">{{ label }}</div>
+		<div class="text-sm text-grey-700">{{ label }}</div>
 		<input :value="value" :placeholder="placeholder" class="block bg-white w-full text-black border">
 	</label>
-	<div class="text-sm text-gray-600">{{ helpText }}</div>
+	<div class="text-sm text-grey-600">{{ helpText }}</div>
 </div>
 `
 });

@@ -10,14 +10,20 @@
     "storybook:build": "vue-cli-service storybook:build -c config/storybook",
     "storybook:serve": "vue-cli-service storybook:serve -p 6006 -c config/storybook",
     "tailwind:build": "npx tailwindcss build ./src/styles/index.css -o ./src/styles.css",
-    "tailwind:build:purge": "npx tailwindcss build ./src/styles/index.css -o ./src/styles.css -purge"
+    "tailwind:build:purge": "npx tailwindcss build ./src/styles/index.css -o ./src/styles.css -purge",
+    "watch_tailwind": "npm-watch tailwind:build"
+  },
+  "watch": {
+    "tailwind:build": {
+      "patterns": ["./tailwind.config.js", "./src/styles", "./src/themes"],
+      "extensions": "js, css"
+    }
   },
   "dependencies": {
     "@tailwindcss/custom-forms": "^0.2.1",
     "core-js": "^3.6.5",
     "lodash": "^4.17.15",
     "tailwindcss": "^1.4.6",
-    "typeface-bangers": "0.0.72",
     "typeface-open-sans": "0.0.75",
     "vue": "^2.6.11",
     "vue-router": "^3.3.2",
@@ -47,6 +53,7 @@
     "eslint": "^7.2.0",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-vue": "^6.2.2",
+    "npm-watch": "^0.6.0",
     "postcss-import": "^12.0.1",
     "stylelint-config-recommended": "^3.0.0",
     "vue-cli-plugin-storybook": "~1.2.2",

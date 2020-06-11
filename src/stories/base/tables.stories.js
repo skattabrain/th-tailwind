@@ -22,7 +22,7 @@ export const Tables = () => ({
   </thead>
   <tbody>
     <tr>
-      <td class="font-bold">Creature from the Black Lagoon</td>
+      <td>Creature from the Black Lagoon</td>
       <td>Maurice Zimm</td>
       <td>February 12, 1954</td>
       <td class="actions">
@@ -35,8 +35,8 @@ export const Tables = () => ({
       </td>
     </tr>
     <tr>
-      <td class="font-bold">The Ghost of Frankenstein</td>
-      <td>George Waggner <br>Some other dude</td>
+      <td>The Ghost of Frankenstein</td>
+      <td>George Waggner</td>
       <td>March 13, 1942</td>
       <td class="actions">
         <div class="btn-group">
@@ -61,7 +61,7 @@ export const Tables = () => ({
       </td>
     </tr>
     <tr>
-      <td class="font-bold">Frankenstein Meets the Wolf Man</td>
+      <td>Frankenstein Meets the Wolf Man</td>
       <td>George Waggner</td>
       <td>March 5, 1943</td>
       <td class="actions">

@@ -1,9 +1,6 @@
-import { text } from '@storybook/addon-knobs';
-
 const templateDecorator = () => ({
   template: '<div class="p-3"><story /></div>',
 });
-
 
 export default {
   decorators: [

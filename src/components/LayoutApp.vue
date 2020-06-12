@@ -1,38 +1,375 @@
 <template>
-  <div class="flex flex-col min-h-screen w-screen bg-grey-200">
-    <layout-navigation :items="navItems" />
-    <layout-header :heading="heading" />
-    <layout-main class="flex-grow">
-      <template v-slot:stuff>
-        <h1>Here might be a page title</h1>
-      </template>
+  <div class="bg-grey-200 flex flex-col h-screen overflow-hidden w-screen">
+    <layout-navbar :brand="brand" :left-nav="primaryNav.left" :right-nav="primaryNav.right" />
+    <layout-navbar :primary="false" :left-nav="secondaryNav.left" :right-nav="secondaryNav.right" />
+    <layout-main class="flex flex-col flex-grow overflow-scroll">
+      <div class="bg-grey-200 p-3">
+        <button class="btn btn-primary">Create</button>
+      </div>
+      <div class="flex-grow bg-white overflow-scroll">
+        <table class="table-hover">
+          <thead>
+            <tr>
+              <th>Movie</th>
+              <th>Written By</th>
+              <th>Year</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Creature from the Black Lagoon</td>
+              <td>Maurice Zimm</td>
+              <td>February 12, 1954</td>
+              <td class="actions">
+                <div class="btn-group">
+                  <button class="btn btn-ghost">♠</button>
+                  <button class="btn btn-ghost">♥</button>
+                  <button class="btn btn-ghost">♣</button>
+                  <button class="btn btn-ghost">♦</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>The Ghost of Frankenstein</td>
+              <td>George Waggner</td>
+              <td>March 13, 1942</td>
+              <td class="actions">
+                <div class="btn-group">
+                  <button class="btn btn-ghost">♠</button>
+                  <button class="btn btn-ghost">♥</button>
+                  <button class="btn btn-ghost">♣</button>
+                  <button class="btn btn-ghost">♦</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="font-bold">The Mummy's Curse</td>
+              <td>Oliver Drake</td>
+              <td>December 22, 1944</td>
+              <td class="actions">
+                <div class="btn-group">
+                  <button class="btn btn-ghost">♠</button>
+                  <button class="btn btn-ghost">♥</button>
+                  <button class="btn btn-ghost">♣</button>
+                  <button class="btn btn-ghost">♦</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>Frankenstein Meets the Wolf Man</td>
+              <td>George Waggner</td>
+              <td>March 5, 1943</td>
+              <td class="actions">
+                <div class="btn-group">
+                  <button class="btn btn-ghost">♠</button>
+                  <button class="btn btn-ghost">♥</button>
+                  <button class="btn btn-ghost">♣</button>
+                  <button class="btn btn-ghost">♦</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>Creature from the Black Lagoon</td>
+              <td>Maurice Zimm</td>
+              <td>February 12, 1954</td>
+              <td class="actions">
+                <div class="btn-group">
+                  <button class="btn btn-ghost">♠</button>
+                  <button class="btn btn-ghost">♥</button>
+                  <button class="btn btn-ghost">♣</button>
+                  <button class="btn btn-ghost">♦</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>The Ghost of Frankenstein</td>
+              <td>George Waggner</td>
+              <td>March 13, 1942</td>
+              <td class="actions">
+                <div class="btn-group">
+                  <button class="btn btn-ghost">♠</button>
+                  <button class="btn btn-ghost">♥</button>
+                  <button class="btn btn-ghost">♣</button>
+                  <button class="btn btn-ghost">♦</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="font-bold">The Mummy's Curse</td>
+              <td>Oliver Drake</td>
+              <td>December 22, 1944</td>
+              <td class="actions">
+                <div class="btn-group">
+                  <button class="btn btn-ghost">♠</button>
+                  <button class="btn btn-ghost">♥</button>
+                  <button class="btn btn-ghost">♣</button>
+                  <button class="btn btn-ghost">♦</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>Frankenstein Meets the Wolf Man</td>
+              <td>George Waggner</td>
+              <td>March 5, 1943</td>
+              <td class="actions">
+                <div class="btn-group">
+                  <button class="btn btn-ghost">♠</button>
+                  <button class="btn btn-ghost">♥</button>
+                  <button class="btn btn-ghost">♣</button>
+                  <button class="btn btn-ghost">♦</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>Creature from the Black Lagoon</td>
+              <td>Maurice Zimm</td>
+              <td>February 12, 1954</td>
+              <td class="actions">
+                <div class="btn-group">
+                  <button class="btn btn-ghost">♠</button>
+                  <button class="btn btn-ghost">♥</button>
+                  <button class="btn btn-ghost">♣</button>
+                  <button class="btn btn-ghost">♦</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>The Ghost of Frankenstein</td>
+              <td>George Waggner</td>
+              <td>March 13, 1942</td>
+              <td class="actions">
+                <div class="btn-group">
+                  <button class="btn btn-ghost">♠</button>
+                  <button class="btn btn-ghost">♥</button>
+                  <button class="btn btn-ghost">♣</button>
+                  <button class="btn btn-ghost">♦</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="font-bold">The Mummy's Curse</td>
+              <td>Oliver Drake</td>
+              <td>December 22, 1944</td>
+              <td class="actions">
+                <div class="btn-group">
+                  <button class="btn btn-ghost">♠</button>
+                  <button class="btn btn-ghost">♥</button>
+                  <button class="btn btn-ghost">♣</button>
+                  <button class="btn btn-ghost">♦</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>Frankenstein Meets the Wolf Man</td>
+              <td>George Waggner</td>
+              <td>March 5, 1943</td>
+              <td class="actions">
+                <div class="btn-group">
+                  <button class="btn btn-ghost">♠</button>
+                  <button class="btn btn-ghost">♥</button>
+                  <button class="btn btn-ghost">♣</button>
+                  <button class="btn btn-ghost">♦</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>Creature from the Black Lagoon</td>
+              <td>Maurice Zimm</td>
+              <td>February 12, 1954</td>
+              <td class="actions">
+                <div class="btn-group">
+                  <button class="btn btn-ghost">♠</button>
+                  <button class="btn btn-ghost">♥</button>
+                  <button class="btn btn-ghost">♣</button>
+                  <button class="btn btn-ghost">♦</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>The Ghost of Frankenstein</td>
+              <td>George Waggner</td>
+              <td>March 13, 1942</td>
+              <td class="actions">
+                <div class="btn-group">
+                  <button class="btn btn-ghost">♠</button>
+                  <button class="btn btn-ghost">♥</button>
+                  <button class="btn btn-ghost">♣</button>
+                  <button class="btn btn-ghost">♦</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="font-bold">The Mummy's Curse</td>
+              <td>Oliver Drake</td>
+              <td>December 22, 1944</td>
+              <td class="actions">
+                <div class="btn-group">
+                  <button class="btn btn-ghost">♠</button>
+                  <button class="btn btn-ghost">♥</button>
+                  <button class="btn btn-ghost">♣</button>
+                  <button class="btn btn-ghost">♦</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>Frankenstein Meets the Wolf Man</td>
+              <td>George Waggner</td>
+              <td>March 5, 1943</td>
+              <td class="actions">
+                <div class="btn-group">
+                  <button class="btn btn-ghost">♠</button>
+                  <button class="btn btn-ghost">♥</button>
+                  <button class="btn btn-ghost">♣</button>
+                  <button class="btn btn-ghost">♦</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>Creature from the Black Lagoon</td>
+              <td>Maurice Zimm</td>
+              <td>February 12, 1954</td>
+              <td class="actions">
+                <div class="btn-group">
+                  <button class="btn btn-ghost">♠</button>
+                  <button class="btn btn-ghost">♥</button>
+                  <button class="btn btn-ghost">♣</button>
+                  <button class="btn btn-ghost">♦</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>The Ghost of Frankenstein</td>
+              <td>George Waggner</td>
+              <td>March 13, 1942</td>
+              <td class="actions">
+                <div class="btn-group">
+                  <button class="btn btn-ghost">♠</button>
+                  <button class="btn btn-ghost">♥</button>
+                  <button class="btn btn-ghost">♣</button>
+                  <button class="btn btn-ghost">♦</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="font-bold">The Mummy's Curse</td>
+              <td>Oliver Drake</td>
+              <td>December 22, 1944</td>
+              <td class="actions">
+                <div class="btn-group">
+                  <button class="btn btn-ghost">♠</button>
+                  <button class="btn btn-ghost">♥</button>
+                  <button class="btn btn-ghost">♣</button>
+                  <button class="btn btn-ghost">♦</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>Frankenstein Meets the Wolf Man</td>
+              <td>George Waggner</td>
+              <td>March 5, 1943</td>
+              <td class="actions">
+                <div class="btn-group">
+                  <button class="btn btn-ghost">♠</button>
+                  <button class="btn btn-ghost">♥</button>
+                  <button class="btn btn-ghost">♣</button>
+                  <button class="btn btn-ghost">♦</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>Creature from the Black Lagoon</td>
+              <td>Maurice Zimm</td>
+              <td>February 12, 1954</td>
+              <td class="actions">
+                <div class="btn-group">
+                  <button class="btn btn-ghost">♠</button>
+                  <button class="btn btn-ghost">♥</button>
+                  <button class="btn btn-ghost">♣</button>
+                  <button class="btn btn-ghost">♦</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>The Ghost of Frankenstein</td>
+              <td>George Waggner</td>
+              <td>March 13, 1942</td>
+              <td class="actions">
+                <div class="btn-group">
+                  <button class="btn btn-ghost">♠</button>
+                  <button class="btn btn-ghost">♥</button>
+                  <button class="btn btn-ghost">♣</button>
+                  <button class="btn btn-ghost">♦</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="font-bold">The Mummy's Curse</td>
+              <td>Oliver Drake</td>
+              <td>December 22, 1944</td>
+              <td class="actions">
+                <div class="btn-group">
+                  <button class="btn btn-ghost">♠</button>
+                  <button class="btn btn-ghost">♥</button>
+                  <button class="btn btn-ghost">♣</button>
+                  <button class="btn btn-ghost">♦</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>Frankenstein Meets the Wolf Man</td>
+              <td>George Waggner</td>
+              <td>March 5, 1943</td>
+              <td class="actions">
+                <div class="btn-group">
+                  <button class="btn btn-ghost">♠</button>
+                  <button class="btn btn-ghost">♥</button>
+                  <button class="btn btn-ghost">♣</button>
+                  <button class="btn btn-ghost">♦</button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="bg-grey-200 p-3">
+        <div class="btn-group">
+          <button class="btn btn-secondary">↯</button>
+          <button class="btn btn-secondary">↯</button>
+          <button class="btn btn-secondary">↯</button>
+          <button class="btn btn-secondary">↯</button>
+        </div>
+      </div>
     </layout-main>
-    <layout-footer />
   </div>
 </template>
 
 <script>
-import LayoutFooter from '@/components/LayoutFooter.vue';
-import LayoutHeader from '@/components/LayoutHeader.vue';
 import LayoutMain from '@/components/LayoutMain.vue';
-import LayoutNavigation from '@/components/LayoutNavigation.vue';
+import LayoutNavbar from '@/components/LayoutNavbar.vue';
 
 export default {
   name: 'LayoutApp',
   components: {
-    LayoutFooter,
-    LayoutHeader,
     LayoutMain,
-    LayoutNavigation
+    LayoutNavbar
   },
   props: {
+    brand: {
+      default: '',
+      type: String
+    },
     heading: {
       required: true,
       type: String
     },
-    navItems: {
-      default: null,
-      array: String
+    primaryNav: {
+      default: () => ({ left: [], right: [] }),
+      type: Object
+    },
+    secondaryNav: {
+      default: () => ({ left: [], right: [] }),
+      type: Object
     }
   },
   data: () => ({

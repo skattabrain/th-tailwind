@@ -1,4 +1,5 @@
 import LayoutApp from '@/components/LayoutApp.vue';
+import navigation from '@/mocks/navigation';
 
 export default {
   component: LayoutApp,
@@ -8,24 +9,10 @@ export default {
 export const app = () => ({
   components: { LayoutApp },
   data: () => ({
+    brand: 'ONE',
     heading: 'Dashboard',
-    navItems: [
-      {
-        label: 'Listings',
-        url: '#',
-        active: true
-      },
-      {
-        label: 'Inquires',
-        url: '#',
-        active: false
-      },
-      {
-        label: 'Invoices',
-        url: '#',
-        active: false
-      },
-    ]
+    primaryNav: navigation.primary,
+    secondaryNav: navigation.secondary,
   }),
-  template: '<layout-app :heading="heading" :nav-items="navItems" />'
+  template: '<layout-app :brand="brand" :heading="heading" :primary-nav="primaryNav" :secondary-nav="secondaryNav" />'
 });

@@ -600,11 +600,13 @@ video {
 }
 
 :focus {
-  outline: #E03A3F solid 2px;
+  outline: #0095FF solid 2px;
 }
 
 body {
   color: #020102;
+  font-size: 0.875rem;
+  font-weight: 300;
 }
 
 h1 {

@@ -10,13 +10,13 @@
       </div>
     </div>
     <div class="p-3 flex flex-col flex-grow">
-      <h3 class="text-grey-800 text-lg leading-5 flex-grow truncate">
-        <a :href="url">
+      <h3 class="text-lg leading-5 flex-grow truncate">
+        <a :href="url" class="text-grey-600 hover:no-underline">
           {{ title }}
         </a>
       </h3>
       <div class="flex flex-row items-center">
-        <div class="flex-1 font-bold text-green-500 text-xl my-2">
+        <div class="flex-1 font-bold text-green-700 text-xl my-2">
           <span class="align-text-top text-sm">$</span>{{ price | numberFilter }}
         </div>
         <div class="font-medium text-grey-700 text-sm">{{ miles | numberFilter }} mi</div>

@@ -1,10 +1,12 @@
 module.exports = function ({ addBase, theme }) {
   addBase({
     ':focus': {
-      outline: `${theme('colors.primary.600')} solid 2px`,
+      outline: `${theme('colors.blue.500')} solid 2px`,
     },
     'body': {
       color: theme('colors.grey.900'),
+      fontSize: theme('fontSize.base'),
+      fontWeight: theme('fontWeight.light')
     },
     'h1': {
       fontSize: theme('fontSize.5xl'),

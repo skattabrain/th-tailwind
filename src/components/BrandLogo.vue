@@ -1,6 +1,6 @@
 <template>
-  <span class="brand-logo" :class="[dark ? 'text-dark' : 'text-white']">
-    SOME<span class="text-purple-500">BRAND</span>HERE<span class="text-purple-500">.COM</span>
+  <span class="font-black" :class="[dark ? 'text-black' : 'text-white']">
+    {{ brand }}
   </span>
 </template>
 
@@ -8,6 +8,10 @@
 export default {
   name: 'BrandLogo',
   props: {
+    brand: {
+      default: null,
+      type: String
+    },
     dark: {
       default: false,
       type: Boolean
@@ -15,10 +19,3 @@ export default {
   },
 };
 </script>
-
-<style lang="css" scoped>
-  .brand-logo {
-    font-weight: 800;
-    font-family: "Open Sans", sans-serif;
-  }
-</style>

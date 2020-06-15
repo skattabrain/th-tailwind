@@ -519,7 +519,7 @@ const theme = _.merge({}, defaultTheme, myCustomTheme);
 
 module.exports = {
   prefix: '',
-  important: false,
+  important: true, // revert to false once Storybook doesn't bleed styles into the iframe
   separator: ':',
   purge: {
     enabled: (process.argv.includes('-purge')),

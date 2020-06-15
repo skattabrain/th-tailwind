@@ -2,6 +2,50 @@ const _ = require('lodash')
 const colors = require('./src/themes/one/colors');
 
 const defaultTheme = {
+  oneVars: theme => ({
+    buttons: {
+      default: {
+        color: {
+          default: theme('colors.grey.900'),
+          hover: theme('colors.grey.900'),
+          focus: theme('colors.grey.900'),
+          active: theme('colors.grey.900'),
+        },
+        backgroundColor: {
+          default: theme('colors.grey.200'),
+          hover: theme('colors.grey.300'),
+          focus: theme('colors.grey.200'),
+          active: theme('colors.grey.700'),
+        },
+        borderColor: {
+          default: theme('colors.grey.200'),
+          hover: theme('colors.grey.300'),
+          focus: theme('colors.blue.600'),
+          active: theme('colors.grey.700'),
+        },
+      },
+      primary: {
+        color: {
+          default: theme('colors.white'),
+          hover: theme('colors.white'),
+          focus: theme('colors.white'),
+          active: theme('colors.white'),
+        },
+        backgroundColor: {
+          default: theme('colors.red.500'),
+          hover: theme('colors.red.600'),
+          focus: theme('colors.red.500'),
+          active: theme('colors.red.700'),
+        },
+        borderColor: {
+          default: theme('colors.red.500'),
+          hover: theme('colors.red.600'),
+          focus: theme('colors.red.600'),
+          active: theme('colors.red.700'),
+        },
+      }
+    }
+  }),
   customForms: theme => ({
     default: {
       input: {
@@ -510,13 +554,19 @@ const defaultTheme = {
 };
 
 const myCustomTheme = {
-  // colors: {
-  //   black: '#111',
-  // },
-  // fontFamily: {
-  //   serif: ['Bangers', 'Georgia', 'Cambria', 'Bangers', '"Times New Roman"', 'Times', 'serif'],
-  // }
-}
+  // oneVars: theme => ({
+  //   buttons: {
+  //     primary: {
+  //       color: {
+  //         default: theme('colors.blue.500'),
+  //         hover: theme('colors.blue.500'),
+  //         focus: theme('colors.blue.500'),
+  //         active: theme('colors.blue.500'),
+  //       }
+  //     }
+  //   }
+  // })
+};
 
 const theme = _.merge({}, defaultTheme, myCustomTheme);
 
@@ -539,12 +589,12 @@ module.exports = {
     alignSelf: ['responsive'],
     appearance: ['responsive'],
     backgroundAttachment: ['responsive'],
-    backgroundColor: ['responsive', 'hover', 'focus'],
+    backgroundColor: ['responsive', 'hover', 'focus', 'active'],
     backgroundPosition: ['responsive'],
     backgroundRepeat: ['responsive'],
     backgroundSize: ['responsive'],
     borderCollapse: ['responsive'],
-    borderColor: ['responsive', 'hover', 'focus'],
+    borderColor: ['responsive', 'hover', 'focus', 'active'],
     borderRadius: ['responsive'],
     borderStyle: ['responsive'],
     borderWidth: ['responsive'],
@@ -592,7 +642,7 @@ module.exports = {
     strokeWidth: ['responsive'],
     tableLayout: ['responsive'],
     textAlign: ['responsive'],
-    textColor: ['responsive', 'hover', 'focus'],
+    textColor: ['responsive', 'hover', 'focus', 'active'],
     textDecoration: ['responsive', 'hover', 'focus'],
     textTransform: ['responsive'],
     userSelect: ['responsive'],

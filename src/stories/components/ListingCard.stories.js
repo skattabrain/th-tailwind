@@ -1,5 +1,5 @@
 import listing from '@/mocks/listing';
-import ListingCard from '@/components/ListingCard.vue';
+import listingCard from '@/components/ListingCard.vue';
 import StoryWrapper from '@/components/utils/StoryWrapper.vue';
 import { text, number } from '@storybook/addon-knobs';
 
@@ -13,7 +13,7 @@ const templateDecorator = () => ({
 
 
 export default {
-  component: ListingCard,
+  component: listingCard,
   decorators: [
     templateDecorator,
   ],
@@ -21,7 +21,7 @@ export default {
 };
 
 export const withImage = () => ({
-  components: { ListingCard },
+  components: { listingCard },
   data: () => ({
     ...listing,
   }),
@@ -40,7 +40,7 @@ export const withImage = () => ({
 });
 
 export const withoutImage = () => ({
-  components: { ListingCard },
+  components: { listingCard },
   data: () => ({
     ...listing,
     image: null,

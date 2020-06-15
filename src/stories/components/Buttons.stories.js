@@ -1,15 +1,20 @@
 import { text, select } from '@storybook/addon-knobs';
+import oneButton from '@/components/OneButton.vue';
 
 const VARIATIONS = {
   none: '',
-  'btn-secondary': 'btn-secondary',
-  'btn-primary': 'btn-primary'
+  'btn--default': 'btn--default',
+  'btn--primary': 'btn--primary'
 };
 
 const APPLY_INDEX_VARIATIONS = {
   none: '',
-  'btn-altnerative-secondary': 'btn-altnerative-secondary',
-  'btn-altnerative-primary': 'btn-altnerative-primary',
+  'btn-altnerative--primary': 'btn-altnerative--primary',
+};
+
+const COMPONENT_VARIATIONS = {
+  'default': 'default',
+  'primary': 'primary'
 };
 
 const templateDecorator = () => ({
@@ -18,6 +23,7 @@ const templateDecorator = () => ({
 
 
 export default {
+  component: oneButton,
   decorators: [
     templateDecorator,
   ],
@@ -42,8 +48,37 @@ export const UsingApplyInIndexCSS = () => ({
       default: text('Button Text', 'Click me you fool!')
     },
     variation: {
-      default: select('Variaton', APPLY_INDEX_VARIATIONS, 'btn-altnerative-primary')
+      default: select('Variaton', APPLY_INDEX_VARIATIONS, 'btn-altnerative--primary')
     }
   },
   template: `<button type="button" class="btn-altnerative" :class="[variation]">{{ text }}</button>`
+});
+
+export const ComponentStyle = () => ({
+  components: { oneButton },
+  props: {
+    text: {
+      default: text('Button Text', 'Click me you fool!')
+    },
+    variation: {
+      default: select('Variaton', COMPONENT_VARIATIONS, 'default')
+    }
+  },
+  template: '<one-button :type="variation">{{ text }}</one-button>'
+});
+
+export const AllThree = () => ({
+  components: { oneButton },
+  props: {
+    text: {
+      default: text('Button Text', 'Click me you fool!')
+    }
+  },
+  template: `
+<div>
+  <button type="button" class="btn btn--primary">{{ text }}</button>
+  <button type="button" class="btn-altnerative btn-altnerative--primary">{{ text }}</button>
+  <one-button type="primary">{{ text }}</one-button>
+</div>
+`
 });

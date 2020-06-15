@@ -85,6 +85,7 @@ const defaultTheme = {
     default: '1px',
     0: '0',
     2: '2px',
+    3: '3px',
     4: '4px',
     8: '8px',
   },
@@ -99,6 +100,7 @@ const defaultTheme = {
     inner: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
     outline: '0 0 0 3px rgba(66, 153, 225, 0.5)',
     none: 'none',
+    'button-focus': 'inset 0 0 0 1px #ffffff',
   },
   container: {
     center: true,
@@ -131,6 +133,7 @@ const defaultTheme = {
   },
   fontFamily: {
     sans: [
+      'Museo Sans',
       'Open Sans',
       'system-ui',
       '-apple-system',
@@ -519,7 +522,7 @@ const theme = _.merge({}, defaultTheme, myCustomTheme);
 
 module.exports = {
   prefix: '',
-  important: true, // revert to false once Storybook doesn't bleed styles into the iframe
+  important: false,
   separator: ':',
   purge: {
     enabled: (process.argv.includes('-purge')),
@@ -629,11 +632,11 @@ module.exports = {
     require('./src/styles/plugins/base/tables'),
 
     // Create utility classes
-    require('./src/styles/plugins/band-colors'),
+    require('./src/styles/plugins/utilities/band-colors'),
 
     // Create component classes
     require('./src/styles/plugins/components/buttons'),
-    require('./src/styles/plugins/cards'),
+    require('./src/styles/plugins/components/cards'),
   ],
 
 };

@@ -6,10 +6,10 @@ const VARIATIONS = {
   'btn-primary': 'btn-primary'
 };
 
-const APPLY_VARIATIONS = {
+const APPLY_INDEX_VARIATIONS = {
   none: '',
-  'btn-alt-secondary': 'btn-alt-secondary',
-  'btn-alt-primary': 'btn-alt-primary',
+  'btn-altnerative-secondary': 'btn-altnerative-secondary',
+  'btn-altnerative-primary': 'btn-altnerative-primary',
 };
 
 const templateDecorator = () => ({
@@ -24,7 +24,7 @@ export default {
   title: 'Buttons',
 };
 
-export const UsingJsBtnClass = () => ({
+export const UsingPluginStyle = () => ({
   props: {
     text: {
       default: text('Button Text', 'Click me you fool!')
@@ -36,14 +36,14 @@ export const UsingJsBtnClass = () => ({
   template: `<button type="button" class="btn" :class="[variation]">{{ text }}</button>`
 });
 
-export const UsingApply = () => ({
+export const UsingApplyInIndexCSS = () => ({
   props: {
     text: {
       default: text('Button Text', 'Click me you fool!')
     },
     variation: {
-      default: select('Variaton', APPLY_VARIATIONS, 'btn-alt-primary')
+      default: select('Variaton', APPLY_INDEX_VARIATIONS, 'btn-altnerative-primary')
     }
   },
-  template: `<button type="button" class="btn-alt" :class="[variation]">{{ text }}</button>`
+  template: `<button type="button" class="btn-altnerative" :class="[variation]">{{ text }}</button>`
 });

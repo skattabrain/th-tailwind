@@ -1,8 +1,8 @@
 module.exports = function ({ addBase, theme }) {
   addBase({
-    ':focus': {
-      outline: `${theme('colors.blue.500')} solid 2px`,
-    },
+    // ':focus': {
+    //   outline: `${theme('colors.blue.500')} solid 2px`,
+    // },
     'body': {
       color: theme('colors.grey.900'),
       fontSize: theme('fontSize.base'),

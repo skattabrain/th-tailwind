@@ -40,7 +40,7 @@ export const withLinks = () => ({
     leftNav: navigation.primary.left,
     rightNav: navigation.primary.right
   }),
-  template: '<layout-navbar :left-nav="leftNav" :right-nav="rightNav" />'
+  template: '<layout-navbar :primary="false" :left-nav="leftNav" :right-nav="rightNav" />'
 });
 
 export const oneExample = () => ({

@@ -4,7 +4,7 @@
     <layout-navbar :primary="false" :left-nav="secondaryNav.left" :right-nav="secondaryNav.right" />
     <layout-main class="flex flex-col flex-grow overflow-scroll">
       <div class="bg-grey-200 p-3">
-        <button class="btn btn-primary">Create</button>
+        <button class="btn btn--primary float-right">Create</button>
       </div>
       <div class="flex-grow bg-white overflow-scroll">
         <table class="table-hover">
@@ -332,13 +332,9 @@
           </tbody>
         </table>
       </div>
-      <div class="bg-grey-200 p-3">
-        <div class="btn-group">
-          <button class="btn btn-secondary">↯</button>
-          <button class="btn btn-secondary">↯</button>
-          <button class="btn btn-secondary">↯</button>
-          <button class="btn btn-secondary">↯</button>
-        </div>
+      <div class="bg-grey-200 p-3 text-right">
+        <button class="btn btn--default mr-1">Cancel</button>
+        <button class="btn btn--primary">Save</button>
       </div>
     </layout-main>
   </div>

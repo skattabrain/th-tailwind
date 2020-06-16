@@ -2,7 +2,7 @@
   <div class="flex bg-grey-800 px-1 font-normal"
     :class="[primary ? 'one-primary-nav border-b border-grey-700' : 'one-secondary-nav']">
       <a v-if="brand" href="#"
-        class="inline-block no-underline hover:no-underline rounded px-3"
+        class="inline-block no-underline hover:no-underline focus:outline-none px-3"
         :class="[primary ? 'py-5' : 'py-2']">
         <brand-logo :brand="brand" />
       </a>
@@ -10,7 +10,7 @@
         <li v-for="item in leftNav"
           :key="item.label"
           class="mr-2">
-          <a class="inline-block px-3 hover:no-underline hover:text-grey-50"
+          <a class="inline-block px-3 hover:no-underline hover:text-grey-50 focus:outline-none"
             :class="[primary ? 'py-5' : 'py-2', item.active ? 'text-white' : 'text-grey-500']"
             :href="item.url">
             {{ item.label }}
@@ -22,7 +22,7 @@
         <li v-for="item in rightNav"
           :key="item.label"
           class="mr-2">
-          <a class="inline-block text-grey-500 px-3 hover:no-underline hover:text-grey-50"
+          <a class="inline-block text-grey-500 px-3 hover:no-underline hover:text-grey-50 focus:outline-none"
             :class="[primary ? 'py-5' : 'py-2', item.active ? 'text-white' : 'text-grey-500']"
             :href="item.url">
             {{ item.label }}
@@ -58,9 +58,3 @@ export default {
   }
 }
 </script>
-
-<style lang="css" scoped>
-  a:focus {
-    outline-offset: -4px;
-  }
-</style>

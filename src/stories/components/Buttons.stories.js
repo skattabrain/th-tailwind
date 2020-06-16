@@ -2,19 +2,17 @@ import { text, select } from '@storybook/addon-knobs';
 import oneButton from '@/components/OneButton.vue';
 
 const VARIATIONS = {
-  none: '',
-  'btn--default': 'btn--default',
-  'btn--primary': 'btn--primary'
+  'btn--primary': 'btn--primary',
+  'btn--default': 'btn--default'
 };
 
 const APPLY_INDEX_VARIATIONS = {
-  none: '',
   'btn-altnerative--primary': 'btn-altnerative--primary',
 };
 
 const COMPONENT_VARIATIONS = {
-  'default': 'default',
-  'primary': 'primary'
+  'primary': 'primary',
+  'default': 'default'
 };
 
 const templateDecorator = () => ({
@@ -36,7 +34,7 @@ export const UsingPluginStyle = () => ({
       default: text('Button Text', 'Click me you fool!')
     },
     variation: {
-      default: select('Variaton', VARIATIONS, 'btn-primary')
+      default: select('Variaton', VARIATIONS, 'btn--primary')
     }
   },
   template: `<button type="button" class="btn" :class="[variation]">{{ text }}</button>`
@@ -61,7 +59,7 @@ export const ComponentStyle = () => ({
       default: text('Button Text', 'Click me you fool!')
     },
     variation: {
-      default: select('Variaton', COMPONENT_VARIATIONS, 'default')
+      default: select('Variaton', COMPONENT_VARIATIONS, 'primary')
     }
   },
   template: '<one-button :type="variation">{{ text }}</one-button>'

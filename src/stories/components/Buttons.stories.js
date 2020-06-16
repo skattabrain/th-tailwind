@@ -1,5 +1,5 @@
 import { text, select } from '@storybook/addon-knobs';
-import oneButton from '@/components/OneButton.vue';
+import oneButton from '@/components/Button.vue';
 
 const VARIATIONS = {
   'btn--primary': 'btn--primary',

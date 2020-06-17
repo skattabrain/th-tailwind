@@ -5,7 +5,7 @@ import StoryWrapper from '@/components/utils/StoryWrapper.vue';
 const templateDecorator = () => ({
   components: { StoryWrapper },
   data: () => ({
-    wrapperWidthClasses: 'container',
+    wrapperWidthClasses: 'container mt-6',
   }),
   template: '<StoryWrapper :wrapper-width-classes="wrapperWidthClasses"><story /></StoryWrapper>',
 });
@@ -18,7 +18,7 @@ export default {
   title: 'Components/Listing Cards',
 };
 
-export const grid4321 = () => ({
+export const ThreePerRow = () => ({
   components: { ListingCards },
   data: () => ({
     listings,

@@ -1,9 +1,9 @@
 <template>
-  <div class="bg-grey-200 flex flex-col h-screen overflow-hidden w-screen">
+  <div class="flex flex-col h-screen overflow-hidden w-screen">
     <layout-navbar :brand="brand" :left-nav="primaryNav.left" :right-nav="primaryNav.right" />
     <layout-navbar :primary="false" :left-nav="secondaryNav.left" :right-nav="secondaryNav.right" />
     <layout-main class="flex flex-col flex-grow overflow-scroll">
-      <div class="bg-grey-200 p-3">
+      <div class="bg-white z-0 shadow-md p-3">
         <button class="btn btn--primary float-right">Create</button>
       </div>
       <div class="flex-grow bg-white overflow-scroll">

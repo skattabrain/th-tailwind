@@ -1,5 +1,5 @@
 const templateDecorator = () => ({
-  template: '<div class="p-3 w-2/3 m-auto"><story /></div>',
+  template: '<div class="p-3 w-2/3"><story /></div>',
 });
 
 
